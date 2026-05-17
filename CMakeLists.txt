@@ -7,6 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(resource_viewer
     src/main.cpp
+    src/MemScanner.cpp
+    src/ScanResVisitor.cpp
 )
 
-#target_include_directories(resource_viewer PRIVATE include thirdparty)
+target_include_directories(resource_viewer PRIVATE include)

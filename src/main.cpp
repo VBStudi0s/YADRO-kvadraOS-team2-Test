@@ -1,7 +1,14 @@
 #include <iostream>
 
+#include "MemScanner.hpp"
+#include "ScanResVisitor.hpp"
+
 int main()
 {
-    std::cout<<"Hello, world!\n";
+    MemScanner scanner;
+    ScanResVisitor visitor;
+    auto res = scanner.scan();
+    std::cout<<"Memory: \n";
+    res->accept_visitor(visitor);
     return 0;
 }

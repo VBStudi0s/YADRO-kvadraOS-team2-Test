@@ -64,3 +64,6 @@ Testing/
 .cache/
 
 .vscode
+
+# front
+node_modules

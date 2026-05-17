@@ -1,0 +1,24 @@
+.progress {
+    background-color: #e9ecef;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.progress-bar {
+    transition: width 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    color: white;
+    font-weight: 500;
+}
+
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+}
+
+#coresContainer .progress {
+    margin-bottom: 12px;
+    height: 25px;
+}

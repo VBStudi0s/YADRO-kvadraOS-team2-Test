@@ -67,3 +67,4 @@ Testing/
 
 # front
 node_modules
+public/*.js

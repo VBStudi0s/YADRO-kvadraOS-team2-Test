@@ -1,10 +1,12 @@
 #include "ScannerManager.hpp"
 #include "ScanResVisitor.hpp"
 #include "MemScanner.hpp"
+#include "CPUScanner.hpp"
 
 ScannerManager::ScannerManager()
 {
     m_scanners.emplace_back(std::make_unique<MemScanner>());
+    m_scanners.emplace_back(std::make_unique<CpuScanner>());
 }
 
 nlohmann::json ScannerManager::scan()

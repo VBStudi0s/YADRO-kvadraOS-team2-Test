@@ -10,6 +10,7 @@ add_executable(resource_viewer
     src/MemScanner.cpp
     src/ScanResVisitor.cpp
     src/ScannerManager.cpp
+    src/CPUScanner.cpp
 )
 
 target_include_directories(resource_viewer PRIVATE include thirdparty/nlohmann_json thirdparty/webui/include)

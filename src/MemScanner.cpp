@@ -35,8 +35,9 @@ std::unique_ptr<IScanResult> MemScanner::scan()
     _parse_meminfo();
     std::unique_ptr<MemScanResult> res = std::make_unique<MemScanResult>();
     res->mem_available_kb = m_meminfo_data["MemAvailable"];
-    res->mem_free_kb = m_meminfo_data["MemFree"];
     res->mem_total_kb = m_meminfo_data["MemTotal"];
+    res->swap_total = m_meminfo_data["SwapTotal"];
+    res->swap_free = m_meminfo_data["SwapFree"];
 
     return res;
 }

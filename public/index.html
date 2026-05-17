@@ -13,7 +13,7 @@
         function updateUI(jsonData) {
             const data = JSON.parse(jsonData);
             document.getElementById('content').innerHTML = `
-                <p>Использовано RAM: ${data.memory.MemFree} kB / ${data.memory.MemTotal} kB</p>
+                <p>Использовано RAM: ${data.memory.MemAvailable} kB / ${data.memory.MemTotal} kB</p>
             `;
         }
     </script>

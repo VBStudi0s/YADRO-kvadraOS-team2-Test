@@ -13,6 +13,7 @@ std::atomic<bool> running{true};
 void scan_thread_func(webui::window* win_ptr)
 {
     ScannerManager manager;
+    manager.scan();     // zero scan for stability
     while(running)
     {
         auto update = manager.scan().dump();
@@ -29,7 +30,8 @@ int main()
 {
     webui::window main_window;
     std::thread updater(scan_thread_func, &main_window);
-    main_window.show("public/index.html");
+    main_window.set_root_folder("public");
+    main_window.show("index.html");
     webui::wait();
     running = false;
     updater.join();

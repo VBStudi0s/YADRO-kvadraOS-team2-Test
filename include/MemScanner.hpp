@@ -9,8 +9,9 @@
 struct MemScanResult : public IScanResult
 {
     unsigned long mem_total_kb = 0;
-    unsigned long mem_free_kb = 0;
     unsigned long mem_available_kb = 0;
+    unsigned long swap_total = 0;
+    unsigned long swap_free = 0;
 
     void accept_visitor(class ScanResVisitor& visitor) override;
 };

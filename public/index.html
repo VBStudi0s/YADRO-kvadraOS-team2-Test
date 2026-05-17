@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Монитор ресурсов</title>
+    <script src="webui.js"></script>
+</head>
+<body>
+    <h1>Системный монитор</h1>
+    <div id="content">Загрузка данных...</div>
+
+    <script>
+        function updateUI(jsonData) {
+            const data = JSON.parse(jsonData);
+            document.getElementById('content').innerHTML = `
+                <p>Использовано RAM: ${data.memory.MemFree} kB / ${data.memory.MemTotal} kB</p>
+            `;
+        }
+    </script>
+</body>
+</html>

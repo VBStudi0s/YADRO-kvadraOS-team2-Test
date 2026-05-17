@@ -9,6 +9,13 @@ add_executable(resource_viewer
     src/main.cpp
     src/MemScanner.cpp
     src/ScanResVisitor.cpp
+    src/ScannerManager.cpp
 )
 
-target_include_directories(resource_viewer PRIVATE include)
+target_include_directories(resource_viewer PRIVATE include thirdparty/nlohmann_json thirdparty/webui/include)
+
+#link_directories(${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/webui)
+target_link_libraries(resource_viewer PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/webui/libwebui-2.so"
+    pthread m dl
+)

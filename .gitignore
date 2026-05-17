@@ -18,10 +18,8 @@
 *.pdb
 
 # Compiled Dynamic libraries
-*.so
 *.dylib
 *.dll
-*.so.*
 
 
 # Fortran module files
@@ -31,8 +29,6 @@
 # Compiled Static libraries
 *.lai
 *.la
-*.a
-*.lib
 
 # Executables
 *.exe
@@ -66,3 +62,5 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+.vscode

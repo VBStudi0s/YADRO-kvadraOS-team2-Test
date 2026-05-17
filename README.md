@@ -31,6 +31,7 @@
 - CMake
 - npm
 - typescript
+- Браузер для просмотра WebUI (тестировался на Google Chrome)
 
 ## Сборка и Запуск
 

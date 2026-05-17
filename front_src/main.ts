@@ -48,7 +48,7 @@ function renderCores(coresLoad: number[]) {
                     <span id="coreText-${i}">0%</span>
                 </div>
                 <div class="progress" style="height: 20px;">
-                    <div id="coreBar-${i}" class="progress-bar bg-info" role="progressbar" style="width: 0%;">0%</div>
+                    <div id="coreBar-${i}" class="progress-bar bg-info" role="progressbar" style="width: 0%;"></div>
                 </div>
             `;
             coresContainer.appendChild(colDiv);
@@ -63,7 +63,6 @@ function renderCores(coresLoad: number[]) {
             const percent = load.toFixed(1);
             textSpan.textContent = `${percent}%`;
             barDiv.style.width = `${load}%`;
-            barDiv.textContent = `${percent}%`;
         }
     }
 }
@@ -77,10 +76,9 @@ function updateUI(jsonData: string): void {
         // CPU
         const totalLoad = cpu.total_load;
         cpuTotalBar.style.width = `${totalLoad}%`;
-        cpuTotalBar.textContent = `${totalLoad.toFixed(1)}%`;
         cpuTotalText.textContent = `${totalLoad.toFixed(1)}%`;
 
-        // Ядра
+        // Cores
         if (cpu.cores_load && cpu.cores_load.length) {
             renderCores(cpu.cores_load);
         }
@@ -89,7 +87,6 @@ function updateUI(jsonData: string): void {
         const usedRam = mem.MemTotal - mem.MemAvailable;
         const ramPercent = (usedRam / mem.MemTotal) * 100;
         ramBar.style.width = `${ramPercent}%`;
-        ramBar.textContent = `${ramPercent.toFixed(1)}%`;
         ramText.textContent = `${formatBytes(usedRam)} / ${formatBytes(mem.MemTotal)}`;
 
         // SWAP
@@ -99,7 +96,6 @@ function updateUI(jsonData: string): void {
             swapPercent = (usedSwap / mem.SwapTotal) * 100;
         }
         swapBar.style.width = `${swapPercent}%`;
-        swapBar.textContent = `${swapPercent.toFixed(1)}%`;
         swapText.textContent = `${formatBytes(usedSwap)} / ${formatBytes(mem.SwapTotal)}`;
 
     } catch (e) {
